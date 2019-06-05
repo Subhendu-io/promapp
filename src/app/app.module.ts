@@ -1,29 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './core/app.routing';
+import { environment } from '../environments/environment';
 import { MaterialModule } from './shared/material.module';
 import { ServicesModule } from './services/services.module';
-import { PagesModule } from './pages/pages.module';
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app.routing';
-import { AppComponent } from './app.component';
-import { AuthGuard } from './guards/auth.guard';
-
+import { PagesModule } from './components/pages/pages.module';
+import { LayoutModule } from './components/layout/layout.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     MaterialModule,
+    CoreModule,
     PagesModule,
+    LayoutModule,
     ServicesModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -33,9 +36,7 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireStorageModule,
     AngularFireFunctionsModule
   ],
-  providers: [
-    AuthGuard
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

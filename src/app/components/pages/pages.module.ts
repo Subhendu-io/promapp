@@ -7,11 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule
-  ]
+  ],
+  exports: []
 })
 export class PagesModule { }
